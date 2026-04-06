@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Barman | AI, Strategy & Project Delivery</title>
+  <meta name="description" content="Shreya Barman portfolio website showcasing AI, analytics, project delivery, certifications, experience, research, and case competitions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2d;
+      --surface: rgba(255, 255, 255, 0.08);
+      --text: #f4f8ff;
+      --muted: #b5c4d9;
+      --blue: #4da3ff;
+      --blue-strong: #0f62fe;
+      --cyan: #78e3ff;
+      --glow: 0 20px 60px rgba(15, 98, 254, 0.25);
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --radius-xl: 28px;
+      --max: 1220px;
+      --transition: 300ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(77,163,255,0.20), transparent 0 28%),
+        radial-gradient(circle at 90% 10%, rgba(120,227,255,0.15), transparent 0 22%),
+        radial-gradient(circle at 50% 100%, rgba(15,98,254,0.20), transparent 0 25%),
+        linear-gradient(180deg, #08111d 0%, #0a1524 45%, #09111d 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      mask-image: radial-gradient(circle at center, black 45%, transparent 85%);
+      opacity: 0.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 16px;
+      z-index: 50;
+      padding-top: 16px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 20px;
+      border-radius: 999px;
+      background: rgba(9, 18, 31, 0.65);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue-strong), var(--cyan));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      box-shadow: var(--glow);
+      flex-shrink: 0;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 0.98rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: calc(100vh - 120px);
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 24px;
+      align-items: center;
+      padding: 44px 0 20px;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-main {
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(77,163,255,0.22), transparent 65%);
+      right: -80px;
+      top: -100px;
+      z-index: -1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(77,163,255,0.12);
+      color: var(--cyan);
+      border: 1px solid rgba(120,227,255,0.16);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 5.6vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #9fd0ff 42%, #7af0ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      margin: 18px 0 12px;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 18px 0 30px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue-strong), #55a8ff);
+      box-shadow: 0 14px 36px rgba(15, 98, 254, 0.30);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.10);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .meta-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .profile-card {
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20px -20px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(120,227,255,0.18), transparent 68%);
+    }
+
+    .photo-box {
+      width: 100%;
+      aspect-ratio: 0.9 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.10);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 24px;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: var(--transition);
+    }
+
+    .mini-card:hover,
+    .feature-card:hover,
+    .stat-card:hover,
+    .skill-card:hover,
+    .exp-card:hover,
+    .project-card:hover,
+    .cert-card:hover,
+    .contact-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(120,227,255,0.22);
+      box-shadow: var(--glow);
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.02rem;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.4rem);
+      letter-spacing: -0.05em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .stats-grid,
+    .feature-grid,
+    .skills-grid,
+    .experience-grid,
+    .projects-grid,
+    .cert-grid,
+    .contact-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    .experience-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1.15fr 0.85fr; }
+
+    .stat-card,
+    .feature-card,
+    .skill-card,
+    .exp-card,
+    .project-card,
+    .cert-card,
+    .contact-box {
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #ffffff, #87d5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-card p,
+    .feature-card p,
+    .skill-card p,
+    .project-card p,
+    .cert-card p,
+    .contact-box p,
+    .exp-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--cyan);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.14rem;
+      letter-spacing: -0.03em;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+    }
+
+    .story-card,
+    .fit-card {
+      padding: 28px;
+    }
+
+    .story-card p,
+    .fit-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .quote {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--cyan);
+      border-radius: 0 18px 18px 0;
+      background: rgba(77,163,255,0.07);
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    .chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .chip:hover {
+      background: rgba(120,227,255,0.10);
+      transform: translateY(-2px);
+    }
+
+    .exp-top,
+    .project-top,
+    .cert-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .contact-copy h2 {
+      margin-top: 0;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: -0.05em;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      transition: var(--transition);
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      transform: translateX(6px);
+      border-color: rgba(120,227,255,0.22);
+    }
+
+    footer {
+      padding: 34px 0 46px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 700ms ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .about-panel,
+      .contact-grid,
+      .stats-grid,
+      .feature-grid,
+      .skills-grid,
+      .experience-grid,
+      .projects-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        border-radius: 24px;
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero-main,
+      .profile-card,
+      .story-card,
+      .fit-card,
+      .stat-card,
+      .feature-card,
+      .skill-card,
+      .exp-card,
+      .project-card,
+      .cert-card,
+      .contact-box {
+        padding: 22px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shell {
+        width: min(var(--max), calc(100% - 18px));
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      h1 {
+        line-height: 1.02;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .hero-meta {
+        gap: 10px;
+      }
+
+      .btn,
+      .meta-pill,
+      .chip {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell nav-wrap">
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-mark">SB</div>
+        <div class="brand-copy">
+          <strong>Shreya Barman</strong>
+          <span>AI • Analytics • Project Delivery</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#ibm-fit">IBM Fit</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-main glass fade-up">
+        <div class="eyebrow">Placement Ready • Strategy + Technology + Communication</div>
+        <h1>I turn <span class="gradient-text">ambiguity into structure,</span><br>and ideas into measurable outcomes.</h1>
+        <p class="hero-sub">MSc Artificial Intelligence • Brunel University London • London, United Kingdom</p>
+        <p class="lead">
+          I bring together management thinking, engineering discipline, analytical curiosity, and a strong communication style. My work so far has focused on solving practical problems through data, structured delivery, and human-centered thinking, whether in project coordination, strategy research, digital campaigns, or emerging technology.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:2607034@brunel.ac.uk">Work with me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/shreya009/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-pill">Available from August 2026</div>
+          <div class="meta-pill">Open to York Road, SE1</div>
+          <div class="meta-pill">Visa valid until 31 July 2028</div>
+        </div>
+      </div>
+
+      <div class="hero-side fade-up">
+        <div class="profile-card glass">
+          <div class="photo-box">
+            <img src="headshot.jpg" alt="Shreya Barman headshot" onerror="this.parentElement.innerHTML='Add your image here by saving your photo as headshot.jpg in the same folder.'">
+          </div>
+        </div>
+        <div class="mini-grid">
+          <div class="mini-card glass">
+            <strong>MSc AI</strong>
+            <span class="small">Brunel University London</span>
+          </div>
+          <div class="mini-card glass">
+            <strong>MSMS</strong>
+            <span class="small">Boston University</span>
+          </div>
+          <div class="mini-card glass">
+            <strong>Winner</strong>
+            <span class="small">Battle of Boutiques</span>
+          </div>
+          <div class="mini-card glass">
+            <strong>Focus</strong>
+            <span class="small">AI, insight, delivery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-up">
+      <div class="section-head">
+        <h2>Selected impact</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card glass">
+          <div class="stat-number">+50%</div>
+          <p>Audience engagement growth through digital campaign execution and performance-focused optimization.</p>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-number">+20%</div>
+          <p>Lead conversion efficiency improvement through a structured sales tracking system.</p>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-number">-20%</div>
+          <p>Project cost reduction through early risk identification, mitigation, and better coordination.</p>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-number">2x</div>
+          <p>Cross-disciplinary foundation across business, management, engineering, and artificial intelligence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="fade-up">
+      <div class="section-head">
+        <h2>About me</h2>
+        <p>I am most effective in environments where technology, client thinking, teamwork, and clear execution all matter at once.</p>
+      </div>
+      <div class="about-panel">
+        <div class="story-card glass">
+          <span class="kicker">My story</span>
+          <p>
+            My path has been intentionally broad. I started in Electronics and Communication Engineering, which gave me a systems mindset and comfort with technical problem solving. I then pursued a Master’s in Management Studies at Boston University, where I strengthened my ability to think strategically, work on business-facing problems, and communicate ideas clearly in professional settings.
+          </p>
+          <p>
+            Now, through my MSc in Artificial Intelligence at Brunel University London, I am deepening that foundation with a more applied understanding of AI, analytics, and responsible innovation. That combination helps me approach challenges from multiple angles: technical, operational, and human.
+          </p>
+          <p>
+            I enjoy turning messy situations into clear plans, finding patterns in information, and contributing to work that feels useful, thoughtful, and outcome-oriented.
+          </p>
+          <div class="chips">
+            <div class="chip">Analytical</div>
+            <div class="chip">Curious</div>
+            <div class="chip">Client-focused</div>
+            <div class="chip">Collaborative</div>
+            <div class="chip">Growth-minded</div>
+            <div class="chip">Responsible AI</div>
+          </div>
+        </div>
+
+        <div class="fit-card glass" id="ibm-fit">
+          <span class="kicker">Why IBM</span>
+          <p>
+            IBM appeals to me because it combines innovation with trust, learning with accountability, and technical progress with real-world problem solving. I do not want to work in a space where technology exists only as theory. I want to be in an environment where technology is used thoughtfully, collaboratively, and with clear purpose.
+          </p>
+          <p>
+            What I would bring is a mindset that is curious, structured, and people-aware. I like understanding how things work, but I also care about how they are communicated, adopted, and improved. I am especially motivated by work that requires learning quickly, collaborating with others, and translating complexity into action.
+          </p>
+          <div class="quote">
+            I want to contribute in a place where strong ideas, disciplined execution, and responsible innovation are all valued at the same time.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-up">
+      <div class="section-head">
+        <h2>How I create value</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card glass">
+          <span class="kicker">Structured execution</span>
+          <h3>I bring order to moving parts</h3>
+          <p>I naturally look for clarity in ownership, milestones, risk, and communication. That helps teams move faster and with less confusion.</p>
+        </div>
+        <div class="feature-card glass">
+          <span class="kicker">Technical curiosity</span>
+          <h3>I enjoy learning how systems work</h3>
+          <p>I am drawn to AI, analytics, and emerging technologies because I enjoy understanding both the logic underneath and the human impact around them.</p>
+        </div>
+        <div class="feature-card glass">
+          <span class="kicker">Client mindset</span>
+          <h3>I think about usefulness, not just output</h3>
+          <p>I care about whether the work actually helps a stakeholder, supports a decision, or improves an experience in a meaningful way.</p>
+        </div>
+        <div class="feature-card glass">
+          <span class="kicker">Communication</span>
+          <h3>I make complexity easier to follow</h3>
+          <p>I am comfortable presenting, explaining, and reframing information in a way that makes it more actionable for others.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="fade-up">
+      <div class="section-head">
+        <h2>Technical and professional skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card glass">
+          <span class="kicker">Data and analysis</span>
+          <h3>Insight development</h3>
+          <ul>
+            <li>MS Excel</li>
+            <li>Tableau</li>
+            <li>Power BI</li>
+            <li>Performance and trend analysis</li>
+          </ul>
+        </div>
+        <div class="skill-card glass">
+          <span class="kicker">Technology</span>
+          <h3>Emerging technical capability</h3>
+          <ul>
+            <li>Python</li>
+            <li>Applied AI systems</li>
+            <li>Responsible AI awareness</li>
+            <li>Technical research and exploration</li>
+          </ul>
+        </div>
+        <div class="skill-card glass">
+          <span class="kicker">Delivery and collaboration</span>
+          <h3>Execution strengths</h3>
+          <ul>
+            <li>Project coordination</li>
+            <li>Cross-functional collaboration</li>
+            <li>Figma, FigJam, Miro, Canva</li>
+            <li>Presentation and stakeholder communication</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="fade-up">
+      <div class="section-head">
+        <h2>Experience</h2>
+      </div>
+      <div class="experience-grid">
+        <div class="exp-card glass">
+          <div class="exp-top">
+            <div>
+              <span class="kicker">Spring 2025</span>
+              <h3>Teaching Assistant • Marketing Insights, Boston University</h3>
+            </div>
+            <div class="small">Boston University</div>
+          </div>
+          <p>Supported course coordination, academic communication, and project delivery for an undergraduate class environment. :contentReference[oaicite:1]{index=1}</p>
+          <ul>
+            <li>Assisted with project support and class coordination for a 33-student course.</li>
+            <li>Strengthened communication, organization, and stakeholder support skills.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card glass">
+          <div class="exp-top">
+            <div>
+              <span class="kicker">Aug 2025 – Dec 2025</span>
+              <h3>Project Manager • Digital Page</h3>
+            </div>
+            <div class="small">Remote</div>
+          </div>
+          <p>Supported student career development projects with structured planning, coordination, and mentoring initiative design.</p>
+          <ul>
+            <li>Managed multi-part project activity in a more organised and trackable way.</li>
+            <li>Used data-informed thinking to support better decision-making and mentoring outcomes.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card glass">
+          <div class="exp-top">
+            <div>
+              <span class="kicker">Jan 2025 – Mar 2025</span>
+              <h3>Digital Marketing Strategy Analyst Intern • Related Beal</h3>
+            </div>
+            <div class="small">Remote</div>
+          </div>
+          <p>Worked on campaign execution and performance analysis to support stronger digital engagement.</p>
+          <ul>
+            <li>Contributed to a 50% increase in audience engagement.</li>
+            <li>Analysed performance patterns to inform campaign improvements.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card glass">
+          <div class="exp-top">
+            <div>
+              <span class="kicker">Oct 2024 – Dec 2024</span>
+              <h3>Strategy and Research Intern • Thynk</h3>
+            </div>
+            <div class="small">Remote</div>
+          </div>
+          <p>Built research-backed structure into sales and positioning work.</p>
+          <ul>
+            <li>Developed a sales tracking system that improved lead conversion efficiency by 20%.</li>
+            <li>Conducted market assessments to refine product positioning and support strategic decisions.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card glass">
+          <div class="exp-top">
+            <div>
+              <span class="kicker">Aug 2023 – Sep 2023</span>
+              <h3>Project Management Intern • Excelerate</h3>
+            </div>
+            <div class="small">Remote</div>
+          </div>
+          <p>Worked on coordination, risk visibility, and execution discipline in an international team environment.</p>
+          <ul>
+            <li>Reduced project costs by 20% through proactive risk identification and mitigation.</li>
+            <li>Helped deliver a virtual event ahead of schedule while maintaining strong documentation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="fade-up">
+      <div class="section-head">
+        <h2>Projects, Publications, and Competitions</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card glass">
+          <div class="project-top">
+            <div>
+              <span class="kicker">Engineering project</span>
+              <h3>Free Space Optical Communication Transceiver</h3>
+            </div>
+          </div>
+          <p>Designed a compact transceiver intended for high-speed, low-latency communication.</p>
+          <ul>
+            <li>Strengthened systems thinking and technical problem solving.</li>
+            <li>Showed comfort with practical, performance-driven engineering work.</li>
+          </ul>
+        </div>
+
+        <div class="project-card glass">
+          <div class="project-top">
+            <div>
+              <span class="kicker">Assistive innovation</span>
+              <h3>Mobility Aid for Visually Impaired People</h3>
+            </div>
+          </div>
+          <p>Developed a wearable aid using ultrasonic sensors and real-time feedback for safer navigation.</p>
+          <ul>
+            <li>Focused on practical human-centered utility.</li>
+            <li>Combined technical prototyping with real-world user need.</li>
+          </ul>
+        </div>
+
+        <div class="project-card glass">
+          <div class="project-top">
+            <div>
+              <span class="kicker">Embedded systems</span>
+              <h3>Voice-Activated System with Arduino UNO</h3>
+            </div>
+          </div>
+          <p>Built an automation prototype using voice-based interaction and Arduino hardware.</p>
+          <ul>
+            <li>Expanded hands-on understanding of prototyping and user interaction.</li>
+            <li>Demonstrated curiosity for building, not just studying, technology.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-grid" style="margin-top:16px;">
+        <div class="feature-card glass">
+          <span class="kicker">Publication</span>
+          <h3>Effect and Sustainability of Metaverse in the Consumer Market</h3>
+          <p>Explored consumer adoption, sustainability, and emerging opportunities in digital economies.</p>
+        </div>
+        <div class="feature-card glass">
+          <span class="kicker">Publication</span>
+          <h3>A Review of mRNA Vaccines with the Aid of Lipid Nanoparticles</h3>
+          <p>Contributed to interdisciplinary research connecting healthcare innovation and public impact.</p>
+        </div>
+        <div class="feature-card glass">
+          <span class="kicker">Publication</span>
+          <h3>Aftermath of the Weather Change of Guwahati Over The Past Decade</h3>
+          <p>Analysed environmental and climate change effects, contributing insight into sustainability and urban challenges. :contentReference[oaicite:2]{index=2}</p>
+        </div>
+        <div class="feature-card glass">
+          <span class="kicker">Case competitions</span>
+          <h3>Battle of Boutiques, UPenn Health, Deloitte</h3>
+          <p>Winner of Battle of Boutiques Case Competition, Semi-Finalist in UPenn Health Case Competition, and Participant in Deloitte Case Competition. :contentReference[oaicite:3]{index=3}</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="fade-up">
+      <div class="section-head">
+        <h2>Certifications</h2>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card glass">
+          <div class="cert-top">
+            <div>
+              <span class="kicker">Completed</span>
+              <h3>Professional learning and certifications</h3>
+            </div>
+          </div>
+          <ul>
+            <li>MS Excel — DataCamp</li>
+            <li>Accenture North America Project Management Job Simulation — Forage</li>
+            <li>UI UX Bootcamp Participation Certificate — CSI Chapter VIT-AP</li>
+            <li>Certificate of Participation — WIOS Club VIT-AP</li>
+            <li>Participant — Aspire For Her</li>
+            <li>Participant — AWS Online Summit</li>
+            <li>Python Course by GirlScript Education Outreach Program</li>
+            <li>Certificate of Participation | Digital Marketing with AI — GirlScript Jamshedpur</li>
+            <li>AWS Certified Introduction to Amazon Elastic Compute Cloud (EC2)</li>
+            <li>Scientist for a Day — NASA</li>
+            <li>Certificate of Participation — HCL GUVI</li>
+            <li>MathWorks Course Completion Certificate</li>
+            <li>Duke University Introduction to Machine Learning — Coursera</li>
+            <li>National Workshop on Data Science and Advance Computing — VIT-AP</li>
+            <li>Built a Face Recognition Application using Python — HCL GUVI</li>
+          </ul>
+        </div>
+        <div class="cert-card glass">
+          <div class="cert-top">
+            <div>
+              <span class="kicker">Featured achievements</span>
+              <h3>Additional portfolio signals</h3>
+            </div>
+          </div>
+          <ul>
+            <li>Project Management Simulation — Accenture Forage</li>
+            <li>YES Club Certificate</li>
+            <li>Project Management Certificate</li>
+            <li>ISRO featured certificate</li>
+            <li>Makeathon participation certificate</li>
+            <li>National Code-athon Challenge 2.0 second round selection</li>
+            <li>Fundamentals of Cosmology completion certificate</li>
+            <li>UI UX Bootcamp CSI VIT-AP</li>
+            <li>GSEOP Scholarship Recipient</li>
+            <li>DevFest India 2021 Certificate</li>
+            <li>IIM Capacity Building Workshop certificate</li>
+            <li>AWS Women in Tech Day 2021</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-up">
+      <div class="contact-grid">
+        <div class="contact-box glass contact-copy">
+          <span class="kicker">Contact</span>
+          <h2>Let’s build something useful.</h2>
+          <p>
+            I am looking for opportunities where I can contribute through analysis, communication, learning agility, and strong execution. I am especially interested in environments where innovation is matched by responsibility and where collaboration genuinely matters.
+          </p>
+          <p>
+            If you are hiring for a placement, internship, or early-career opportunity where those qualities matter, I would love to connect.
+          </p>
+        </div>
+        <div class="contact-box glass">
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:2607034@brunel.ac.uk">
+              <span>Email</span>
+              <span>2607034@brunel.ac.uk</span>
+            </a>
+            <a class="contact-link" href="tel:+447424392073">
+              <span>Phone</span>
+              <span>+44 7424392073</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/shreya009/" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              <span>https://www.linkedin.com/in/shreya009/</span>
+            </a>
+            <div class="contact-link">
+              <span>Location</span>
+              <span>London, UK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = Array.from(navLinks)
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActiveLink(id) {
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+    });
+  }
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visibleSections = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleSections.length > 0) {
+        setActiveLink(visibleSections[0].target.id);
+      }
+    },
+    {
+      root: null,
+      rootMargin: "-18% 0px -55% 0px",
+      threshold: [0.2, 0.35, 0.5, 0.65]
+    }
+  );
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  document.querySelectorAll('.fade-up').forEach(item => revealObserver.observe(item));
+
+  window.addEventListener('load', () => {
+    if (sections.length) {
+      setActiveLink(sections[0].id);
+    }
+  });
+</script>
+</body>
+</html>
